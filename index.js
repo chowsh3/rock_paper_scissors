@@ -9,7 +9,7 @@ const readline = require("readline").createInterface({
   output: process.stdout
 });
 // Validate the users choice and gell them if they made a mistake
-    //strip capitalisation or ignore caps
+//strip capitalisation or ignore caps
 function handleUserResponse(response) {
   if (response !== "rock" && response !== "paper" && response !== "scissors") {
     console.log("Please enter as shown: rock, paper or scissors");
@@ -17,7 +17,7 @@ function handleUserResponse(response) {
   } else {
 
 
-    
+
 
 
     //Make a random selection for the computer
@@ -45,16 +45,22 @@ function handleUserResponse(response) {
       } else if (response === "paper") {
         if (randomSelection === "rock") {
           console.log("paper wins");
-        } else {
-          console.log("scissors wins");
-        }
-      }
-    };
+        } else  console.log("scissors wins");
+          } else if (response ==="scissors"){
+            if(randomSelection === "paper"){
+                console.log("scissors wins");
+            }else {
+                console.log("rock wins");
+            }
+            }
+        };
+
+
 
     compare(response, randomSelection);
 
 
-   
+
     readline.close();
 
   }
